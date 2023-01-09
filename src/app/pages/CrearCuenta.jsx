@@ -27,7 +27,6 @@ export const CrearCuenta = () => {
         })
         .then(res => res.json())
         .then( res => {
-            console.log(res);
             if(res === "fallo"){
                 Swal.fire({
                     icon: 'error',
@@ -46,7 +45,9 @@ export const CrearCuenta = () => {
                     title: 'Exito'
                 })
                 . then(data => {
-
+                    window.localStorage.setItem("idUsuario",res[1])
+                    window.localStorage.setItem("isLoggedIn",true)
+                    window.location.href = '/';
                 })
             }
         })
