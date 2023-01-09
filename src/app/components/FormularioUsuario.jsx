@@ -4,7 +4,7 @@ import { GeneradorContra } from "../components/GeneradorContra"
 import { Header } from "../components/Header"
 import { HeaderSection } from "../components/HeaderSection"
 
-export const FormularioUsuario = ({path , titulo, tipo_form}) => {
+export const FormularioUsuario = ({path , titulo, tipo_form, submitFormulario}) => {
     return (
         <>
             <Header></Header>
@@ -12,7 +12,7 @@ export const FormularioUsuario = ({path , titulo, tipo_form}) => {
                 <HeaderSection titulo={titulo} path={path}></HeaderSection>
                 <section className="inner-page">
                     <div className="container">
-                        <DatosUsuario titulo={titulo} tipo={tipo_form}></DatosUsuario>
+                        <DatosUsuario titulo={titulo} tipo={tipo_form} submitFormulario={submitFormulario}></DatosUsuario>
                     </div>
                 </section>
 

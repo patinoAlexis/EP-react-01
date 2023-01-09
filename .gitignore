@@ -1,4 +1,5 @@
 # Logs
+_redirects
 logs
 *.log
 npm-debug.log*
