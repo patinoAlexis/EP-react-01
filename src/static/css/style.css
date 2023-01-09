@@ -1878,7 +1878,15 @@ section {
   background: #209dd8;
   cursor: pointer;
 }
+.btn-primary{
+  background: #209dd8;
+  /* background-color: #209dd8; */
+}
+input[type=checkbox]{
+  /* background: #209dd8; */
+  accent-color: #209dd8;
 
+}
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;

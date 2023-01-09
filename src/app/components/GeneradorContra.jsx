@@ -35,9 +35,13 @@ export const GeneradorContra = () => {
                 <form className="generador-contra-form w-75 ">
                     <div className="form-group">
                         <input type="text" name="email" className="inpt-texto" disabled value="dddd" />
-                        <input type="submit" value="Copiar" className="inpt-submit" />
+                        <button type="button" className="inpt-submit"><i class="ri-file-copy-line" style={{"font-size": "25px"}}></i></button>
+                        {/* <input type="submit" value="Copiar" className="inpt-submit fa-light fa-copy" /> */}
                     </div>
                 </form>
+            </div>
+            <div className="row justify-content-center">
+                <button type="button" className="btn btn-primary col-2 rounded-5" style={{"font-size": "27px"}}>Generar</button>
             </div>
             <div className="card mt-5 justify-content-center">
                 <div className="card-body">
