@@ -1,8 +1,5 @@
-import { DatosUsuario } from "../components/DatosUsuario"
-import { Footer } from "../components/Footer"
-import { GeneradorContra } from "../components/GeneradorContra"
-import { Header } from "../components/Header"
-import { HeaderSection } from "../components/HeaderSection"
+import { FormularioUsuario } from "../components/FormularioUsuario"
+
 
 export const CrearCuenta = () => {
     const path = [
@@ -11,24 +8,14 @@ export const CrearCuenta = () => {
             nombre: "Inicio"
         },
         {
-            link: "",
-            nombre: "Crear cuenta"
+            link: false,
+            nombre: "Crear Cuenta"
         }
     ]
 
     return (
         <>
-            <Header></Header>
-            <main id="main">
-                <HeaderSection titulo="Crear cuenta" path={path}></HeaderSection>
-                <section className="inner-page">
-                    <div className="container">
-                        <DatosUsuario></DatosUsuario>
-                    </div>
-                </section>
-
-            </main>
-            <Footer></Footer>
+            <FormularioUsuario path={path} titulo="Crear cuenta" tipo_form="crear"></FormularioUsuario>
         </>
     )
 }

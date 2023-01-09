@@ -27,8 +27,8 @@ export const Header = ({opcion}) => {
                         
                         <li><a className={"nav-link scrollto " + (opcion === "Acerca de" ? "active" : "")} href="#about">Acerca de</a></li>
                         <li><a className={"nav-link scrollto " + (opcion === "Servicios" ? "active" : "")} href="#services">Servicios</a></li>
-                        <li><a className={"nav-link scrollto " + (opcion === "Iniciar sesion" ? "active" : "")} href="#contact">Iniciar sesión</a></li>
-                        <li><a className={"nav-link scrollto " + (opcion === "Crear cuenta" ? "active" : "")} href="./CrearCuenta">Crear cuenta</a></li>
+                        <li><a className={"nav-link scrollto " + (opcion === "Iniciar sesion" ? "active" : "")} href="./iniciar-sesion">Iniciar sesión</a></li>
+                        <li><a className={"nav-link scrollto " + (opcion === "Crear cuenta" ? "active" : "")} href="./crear-cuenta">Crear cuenta</a></li>
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle" onClick={movil_toggle}></i>
                 </nav>

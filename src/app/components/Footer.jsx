@@ -5,50 +5,18 @@ export const Footer = () => {
         <>
             <footer id="footer">
                 <div className="footer-top">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-3 col-md-6 footer-contact">
-                                <h3>Arsha</h3>
-                                <p>
-                                    A108 Adam Street <br></br>
-                                    New York, NY 535022<br></br>
-                                    United States <br></br><br></br>
-                                    <strong>Phone:</strong> +1 5589 55488 55<br></br>
-                                    <strong>Email:</strong> info@example.com<br></br>
-                                </p>
-                            </div>
-                            <div className="col-lg-3 col-md-6 footer-links">
-                                <h4>Useful Links</h4>
-                                <ul>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                                </ul>
-                            </div>
-
-                            <div className="col-lg-3 col-md-6 footer-links">
-                                <h4>Our Services</h4>
-                                <ul>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                                </ul>
-                            </div>
-
-                            <div className="col-lg-3 col-md-6 footer-links">
-                                <h4>Our Social Networks</h4>
-                                <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-                                <div className="social-links mt-3">
-                                    <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
-                                    <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
-                                    <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-                                    <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-                                    <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                    <div className="container mb-2">
+                        <div className="row ">
+                            <div className="col-lg-12 col-md-6 footer-contact d-flex justify-content-center">
+                                <div className="d-block text-center">
+                                    <h3>Contacto</h3>
+                                    <div className="social-links mt-3">
+                                        <a href="https://github.com/patinoAlexis" className="instagram"><i className="bx bxl-github"></i></a>
+                                        <a href="https://www.linkedin.com/in/alexis-iv%C3%A1n-pati%C3%B1o-victoria/" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                                    </div>
                                 </div>
+                                
+
                             </div>
                         </div>
                     </div>
@@ -62,7 +30,7 @@ export const Footer = () => {
                         {/* <!-- You can delete the links only if you purchased the pro version. --> */}
                         {/* <!-- Licensing information: https://bootstrapmade.com/license/ --> */}
                         {/* <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ --> */}
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        Template designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> / Pagina hecha por <a>Alexis Patiño</a>
                     </div>
                 </div>
             </footer>

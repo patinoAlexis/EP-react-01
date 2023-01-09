@@ -9,9 +9,6 @@ export const DatosUsuario = ({titulo}) => {
         <>
         <div className="d-flex align-content-center justify-content-center">
             <div className="card  w-55">
-                <div className="card-title text-center pt-3">
-                    <h3>Datos del usuario</h3>
-                </div>
                 <div className="card-body">
                     <h3 className="card-title text-center">{titulo}</h3>
                     <form className="d-flex checkbox-form row">
@@ -38,4 +35,5 @@ export const DatosUsuario = ({titulo}) => {
 
 DatosUsuario.defaultProps = {
     tipo: "iniciar",
+    titulo: "Iniciar sesion"
 }
