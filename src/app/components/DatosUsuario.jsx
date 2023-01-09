@@ -4,7 +4,7 @@ export const DatosUsuario = ({titulo, tipo, submitFormulario}) => {
     const [usuario, setUsuario] = useState('');
     const [contra, setContra] = useState('');
     let boton = "Registrarse"
-    if(titulo === "iniciar"){
+    if(tipo === "inicio"){
         boton = "Aceptar"
     }
 

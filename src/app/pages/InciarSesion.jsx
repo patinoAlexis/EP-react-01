@@ -1,6 +1,6 @@
 import { FormularioUsuario } from "../components/FormularioUsuario";
 import Swal from 'sweetalert2';
-export const IniciarSesion = () => {
+export const IniciarSesion = ({isLoggedIn}) => {
     const path = [
         {
             link: "/",
@@ -55,6 +55,6 @@ export const IniciarSesion = () => {
 
 
     return (
-        <FormularioUsuario path={path} titulo="Iniciar Sesión" tipo_form="inicio" submitFormulario={sesion} ></FormularioUsuario>
+        <FormularioUsuario path={path} titulo="Iniciar Sesión" tipo_form="inicio" submitFormulario={sesion} isLoggedIn={isLoggedIn}></FormularioUsuario>
     )
 }

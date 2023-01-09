@@ -1,7 +1,7 @@
 import { FormularioUsuario } from "../components/FormularioUsuario"
 import Swal from 'sweetalert2'
 
-export const CrearCuenta = () => {
+export const CrearCuenta = ({isLoggedIn}) => {
     const path = [
         {
             link: "/",
@@ -56,7 +56,7 @@ export const CrearCuenta = () => {
 
     return (
         <>
-            <FormularioUsuario path={path} titulo="Crear cuenta" tipo_form="crear" submitFormulario={hacerCuenta}></FormularioUsuario>
+            <FormularioUsuario path={path} titulo="Crear cuenta" tipo_form="crear" submitFormulario={hacerCuenta} isLoggedIn={isLoggedIn}></FormularioUsuario>
         </>
     )
 }

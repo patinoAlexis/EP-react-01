@@ -4,10 +4,10 @@ import { GeneradorContra } from "../components/GeneradorContra"
 import { Header } from "../components/Header"
 import { HeaderSection } from "../components/HeaderSection"
 
-export const FormularioUsuario = ({path , titulo, tipo_form, submitFormulario}) => {
+export const FormularioUsuario = ({path , titulo, tipo_form, submitFormulario, isLoggedIn}) => {
     return (
         <>
-            <Header></Header>
+            <Header isLoggedIn={isLoggedIn}></Header>
             <main id="main">
                 <HeaderSection titulo={titulo} path={path}></HeaderSection>
                 <section className="inner-page">

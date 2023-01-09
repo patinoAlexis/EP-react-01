@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -11,9 +13,20 @@ const movil_toggle = () => {
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
 }
+const cerrar_sesion = () => {
+    window.localStorage.removeItem("isLoggedIn")
+    window.localStorage.removeItem("idUsuario")
+    Swal.fire({
+        icon: 'success',
+        title: 'Has cerrado sesion correctamente'
+    })
+    .then(res => {
+        window.location.href = '/';
+    })
+    ;
+}
 
-
-export const Header = ({opcion}) => {
+export const Header = ({isLoggedIn,opcion}) => {
 
     return (
         <header id="header" className="fixed-top header-inner-pages">
@@ -25,10 +38,21 @@ export const Header = ({opcion}) => {
                 <nav id="navbar" className="navbar">
                     <ul>
                         
-                        <li><a className={"nav-link scrollto " + (opcion === "Acerca de" ? "active" : "")} href="#about">Acerca de</a></li>
-                        <li><a className={"nav-link scrollto " + (opcion === "Servicios" ? "active" : "")} href="#services">Servicios</a></li>
-                        <li><a className={"nav-link scrollto " + (opcion === "Iniciar sesion" ? "active" : "")} href="./iniciar-sesion">Iniciar sesión</a></li>
-                        <li><a className={"nav-link scrollto " + (opcion === "Crear cuenta" ? "active" : "")} href="./crear-cuenta">Crear cuenta</a></li>
+                        {/* <li><a className={"nav-link scrollto " + (opcion === "Acerca de" ? "active" : "")} href="#about">Acerca de</a></li> */}
+                        {/* <li><a className={"nav-link scrollto " + (opcion === "Servicios" ? "active" : "")} href="#services">Servicios</a></li> */}
+                        {
+                            isLoggedIn ? 
+                            <>
+                                <li><a className={"nav-link scrollto " + (opcion === "Iniciar sesion" ? "active" : "")} href="./iniciar-sesion">Cuenta</a></li>
+                                <li><a className={"getstarted scrollto " + (opcion === "Crear cuenta" ? "active" : "")} onClick={cerrar_sesion} >Cerrar sesion</a></li>
+                            </>
+                            :
+                            <>
+                                <li><a className={"nav-link scrollto " + (opcion === "Iniciar sesion" ? "active" : "")} href="./iniciar-sesion">Iniciar sesión</a></li>
+                                <li><a className={"getstarted scrollto " + (opcion === "Crear cuenta" ? "active" : "")} href="./crear-cuenta" >Crear cuenta</a></li>
+                            </>
+                        }
+                        
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle" onClick={movil_toggle}></i>
                 </nav>

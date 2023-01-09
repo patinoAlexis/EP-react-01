@@ -1,4 +1,5 @@
-import {useState} from 'react'
+import {useState} from 'react';
+import Swal from 'sweetalert2';
 
 export const GeneradorContra = () => {
     
@@ -34,6 +35,11 @@ export const GeneradorContra = () => {
         var content = document.getElementById('INPT_generadorContra');
         content.select();
         document.execCommand('copy')
+        Swal.fire({
+            icon: 'success',
+            title: 'Se ha copiado al portapapeles'
+        });
+        window.location.href = '/';
     } 
     const generarContra =  () =>{
         let dato = 'd';
