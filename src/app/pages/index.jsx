@@ -11,7 +11,7 @@ export const Index = ({isLoggedIn}) => {
                 <HeaderSection></HeaderSection>
                 <section className="inner-page">
                     <div className="container">
-                        <GeneradorContra></GeneradorContra>
+                        <GeneradorContra isLoggedIn={isLoggedIn}></GeneradorContra>
                     </div>
                 </section>
 

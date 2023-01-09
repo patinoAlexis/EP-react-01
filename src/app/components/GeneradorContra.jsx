@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Swal from 'sweetalert2';
 
-export const GeneradorContra = () => {
+export const GeneradorContra = ({isLoggedIn}) => {
     
     const [sliderValor, setsliderValor] = useState(20)
     const [mayusculasCB, setmayusculasCB] = useState(true)
@@ -63,6 +63,68 @@ export const GeneradorContra = () => {
             setGenerador(res);
         })
     }
+    const guardarContra = (nombre) => {
+        console.log(window.localStorage.getItem("idUsuario"))
+        fetch("https://phpstack-913586-3171019.cloudwaysapps.com/guardar_contra.php",{
+            method: "POST",
+            body: JSON.stringify({
+                contra: generador,
+                nombre: nombre,
+                usuario: window.localStorage.getItem("idUsuario")
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                "Access-Control-Allow-Credentials" : true ,
+            },
+        })
+        .then(res => res.json())
+        .then(res => {
+            if(res === 'exito'){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Se ha guardado la contraseña con éxito'
+                })
+            } else {
+                console.log(res)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Hubo un fallo al intentar guardar la contraseña'
+                })
+            }
+            
+        })
+    }
+    const onClickGuardarContra = () => {
+        if(generador === ''){
+            Swal.fire({
+                icon: 'error',
+                title: 'Primero debes generar una contraseña'
+            })
+        } else {
+            Swal.fire({
+                icon: 'info',
+                title: 'Dale un nombre a la contraseña',
+                input: 'text',
+                inputLabel: 'Nombre',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar',
+                showConfirmButton: true,
+                confirmButtonText: 'Guardar',
+                inputValidator: (value) => {
+                  if (!value) {
+                    return 'Necesitar dar un nombre'
+                  } else if(value.length <= 2){
+                    return 'El nombre debe superar los 2 caracteres';
+                  }
+                }
+            })
+            .then(res => {
+                guardarContra(res.value)
+            })
+        }
+        
+    }
     const [generador, setGenerador] = useState('');
     return (
         <>
@@ -77,6 +139,13 @@ export const GeneradorContra = () => {
             </div>
             <div className="row justify-content-center">
                 <button type="button" className="btn btn-primary col-2 rounded-5" style={{"fontSize": "27px"}} onClick={generarContra}>Generar</button>
+                
+                {
+                    isLoggedIn &&
+                    <button type="button" className="btn btn-success col-3 rounded-5" style={{"fontSize": "27px"}} onClick={onClickGuardarContra}>Guardar contraseña</button>
+
+                }
+            
             </div>
             <div className="card mt-5 justify-content-center">
                 <div className="card-body">
