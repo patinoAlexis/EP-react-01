@@ -32,14 +32,22 @@ export const GeneradorContra = ({isLoggedIn}) => {
     }
     const handleCopy = (e) => {
         e.preventDefault()
-        var content = document.getElementById('INPT_generadorContra');
-        content.select();
-        document.execCommand('copy')
-        Swal.fire({
-            icon: 'success',
-            title: 'Se ha copiado al portapapeles'
-        });
-        window.location.href = '/';
+        if(generador === ''){
+            Swal.fire({
+                icon: 'error',
+                title: 'Primero debes generar una contraseña'
+            })
+        } else {
+            let content = document.getElementById('INPT_generadorContra');
+            content.select();
+            document.execCommand('copy')
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Se ha copiado al portapapeles'
+            })
+        }
+        
     } 
     const generarContra =  () =>{
         let dato = 'd';
